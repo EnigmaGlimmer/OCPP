@@ -5,14 +5,14 @@
 @tailwind utilities;
 
 :root {
-  --background: #171717;
-  --foreground: #00ff0a;
+  --background: #ffffff;
+  --foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #00ff0a;
   }
 }
 
@@ -63,6 +63,11 @@ body {
   text-overflow: ellipsis;
 }
 
+.border-b-1 {
+  border-bottom-width: 1px;
+  font-size: small;
+}
+
 @layer components {
   .flex-center {
     @apply flex items-center justify-center;
@@ -86,6 +91,10 @@ body {
 
   .outlined {
     @apply px-4 py-3 border-none bg-transparent hover:bg-opacity-0
+  }
+
+  .addmodal-item {
+    @apply border-0 border-b-1 focus:outline-none placeholder-foreground w-full rounded-none pl-1 pb-1
   }
 
   button {

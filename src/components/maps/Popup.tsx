@@ -8,11 +8,12 @@ interface PopupProps {
     open?: boolean;
     data?: ChargerModel[] | UserModel[] | Property[];
     onClose?: () => void;
+    addStation?: () => void;
     children?: React.ReactNode;
     styles?: string;
 };
 
-const Popup: React.FC<PopupProps> = ({title, cta, onClose, children, styles = ""}) => {
+const Popup: React.FC<PopupProps> = ({title, cta, onClose, addStation, children, styles = ""}) => {
     return (
         <div className={"absolute left-full bottom-0 group card px-4 py-2 min-w-60 " + styles}>
             <div id="title+close" className="flex-center w-full z-10 justify-between pb-3">
@@ -24,7 +25,7 @@ const Popup: React.FC<PopupProps> = ({title, cta, onClose, children, styles = ""
 
             <div id="title+close" className="flex-center w-full z-10 justify-end pt-3">
                 <p className="absolute left-4 bottom-2">+</p>
-                <div className="outlined p-0 cursor-pointer">{cta}</div>
+                <div className="outlined p-0 cursor-pointer" onClick={addStation}>{cta}</div>
             </div>
         </div>
     );
